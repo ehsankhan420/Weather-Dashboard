@@ -130,3 +130,45 @@ button#get-location {
 
 
 
+/* Adjusting the Weather Icon and Position */
+#weather-icon {
+    width: 150px; /* Reduced size */
+    height: 150px;
+    display: block;
+    margin: 0 395px 20px; /* Center and add spacing below */
+    position: relative;
+    z-index: 1; /* Ensures it stays above other content */
+  }
+  
+  .weather-details {
+    position: relative;
+  }
+  
+  #weather-description {
+    position: absolute;
+    top: 50%; /* Vertically center the description */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the description is above the icon */
+    font-style: italic;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0); /* Ensures readability over the icon */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
+  }
+  
+  
+/* Weather Widget */
+#weather-widget {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Input Group Styles */
+  #weather-widget .input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  

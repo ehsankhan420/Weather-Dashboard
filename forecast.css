@@ -1,0 +1,106 @@
+/* Forecast Table */
+#forecast-section h2 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Table Styles */
+  #forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: rgba(30, 30, 30, 0.9); /* Darker background for the table */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures no overflow on rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: transform 0.2s ease; /* Smooth scaling effect */
+  }
+  
+  #forecast-table:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+  }
+  
+  #forecast-table th,
+  #forecast-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f0f0f0; /* Light text color for better readability */
+    position: relative; /* Required for animation effect */
+  }
+  
+  /* Hover effect on table cells */
+  #forecast-table td:hover {
+    background: rgba(255, 255, 255, 0.05); /* Light highlight on hover */
+    transition: background 0.3s ease; /* Smooth transition */
+  }
+  
+  #forecast-table th {
+    background: linear-gradient(135deg, #4a4a4a, #3a3a3a); /* Gradient background for headers */
+    font-weight: 600; /* Semi-bold for header */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Soft text shadow */
+  }
+  
+  #forecast-table tr:nth-child(even) {
+    background-color: rgba(40, 40, 40, 0.7); /* Alternating row color for better contrast */
+  }
+  
+  #forecast-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+  }
+  
+  /* Pagination Styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px; /* Spacing above pagination */
+  }
+  
+  .pagination .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #555, #777); /* Gradient background for buttons */
+    color: #fff; /* White text for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Added transition for scaling */
+    position: relative; /* Required for animation effect */
+  }
+  
+  .pagination .btn:hover {
+    background: linear-gradient(135deg, #666, #888); /* Lighter background on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  .pagination .btn:disabled {
+    background-color: #333; /* Darker for disabled state */
+    cursor: not-allowed; /* Change cursor for disabled */
+  }
+  
+
+  /* Weather Icon Styling */
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+
+  #forecast-widget {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Input Group Styles */
+  #forecast-widget .input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }

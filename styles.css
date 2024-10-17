@@ -319,21 +319,6 @@ input:checked + .slider:before {
   cursor: not-allowed; /* Change cursor for disabled */
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-  .side-menu {
-      width: 180px; /* More compact on smaller screens */
-  }
-
-  .side-menu:hover {
-      width: 200px; /* Adjust expansion on hover */
-  }
-
-  .side-menu ul li a {
-      font-size: 0.9rem; /* Smaller text for responsiveness */
-  }
-}
-
 
 /* Profile Picture Styles */
 .profile-container {
@@ -489,21 +474,3 @@ input:checked + .slider:before {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
 }
 
-/* Sidebar Weather Icon Background */
-.side-menu {
-  position: relative;
-}
-
-.side-menu::before {
-  content: '';
-  position: absolute;
-  top: 50px;
-  left: 15%;
-  width: 50px; /* Reduced the size */
-  height: 50px;
-  background-image: url('cloudy.png'); /* Updated to use "cloudy.png" */
-  background-size: cover;
-  background-position: center; /* Faded background effect */
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Ensure it stays behind the sidebar content */
-}

@@ -1,0 +1,128 @@
+/* Profile Picture Styles */
+.profile-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .profile-pic {
+    width: 60px; /* Slightly larger for better visibility */
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fa6262; /* Slightly thicker border for emphasis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    border-color: #f30000; /* Change border color on hover */
+  }
+  
+  /* Popup Styles */
+  .popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  
+  .popup.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    animation: pop-in 0.4s ease;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Close Button in top-right corner */
+  .close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .close-popup:hover {
+    color: #ff0000;
+  }
+  
+  /* Pop-in Animation */
+  @keyframes pop-in {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Profile Actions - Button Container */
+  .profile-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .btn, .edit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #74ebd5;
+  }
+  
+  .edit-btn {
+    background-color: #28a745;
+  }
+  
+  .edit-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Text above buttons */
+  .action-text {
+    font-size: 18px;  /* Larger text size */
+    font-weight: 600;  /* Make the text bold */
+    color: #333;       /* Darker color for emphasis */
+    margin: 20px 0;    /* Add space above and below */
+    text-align: center; /* Center the text */
+  }
+  
