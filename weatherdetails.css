@@ -128,47 +128,156 @@ button#get-location {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-
 /* Adjusting the Weather Icon and Position */
 #weather-icon {
-    width: 150px; /* Reduced size */
-    height: 150px;
-    display: block;
-    margin: 0 395px 20px; /* Center and add spacing below */
-    position: relative;
-    z-index: 1; /* Ensures it stays above other content */
-  }
-  
-  .weather-details {
-    position: relative;
-  }
-  
-  #weather-description {
-    position: absolute;
-    top: 50%; /* Vertically center the description */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the description is above the icon */
-    font-style: italic;
-    font-size: 1.5rem;
-    color: rgb(0, 0, 0); /* Ensures readability over the icon */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
-  }
-  
-  
+  width: 150px; /* Reduced size */
+  height: 150px;
+  display: block;
+  margin: 0 395px 20px; /* Center and add spacing below */
+  position: relative;
+  z-index: 1; /* Ensures it stays above other content */
+}
+
+.weather-details {
+  position: relative;
+}
+
+#weather-description {
+  position: absolute;
+  top: 50%; /* Vertically center the description */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the description is above the icon */
+  font-style: italic;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0); /* Ensures readability over the icon */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
+}
+
 /* Weather Widget */
 #weather-widget {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Group Styles */
+#weather-widget .input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+  button#get-weather,
+  button#get-location {
+    width: 130px;
+    font-size: 1rem;
+    padding: 10px 18px;
   }
-  
-  /* Input Group Styles */
+
+  .weather-details h2 {
+    font-size: 2rem;
+    margin-left: 20px;
+  }
+
+  .weather-details p {
+    font-size: 1.4rem;
+    margin-left: 20px;
+  }
+
+  #weather-icon {
+    margin: 0 auto 20px;
+    width: 120px;
+    height: 120px;
+  }
+
+  #weather-description {
+    font-size: 1.3rem;
+  }
+
+  #weather-widget {
+    padding: 20px;
+  }
+
   #weather-widget .input-group {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
+}
+
+@media screen and (max-width: 768px) {
+  button#get-weather,
+  button#get-location {
+    width: 120px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .weather-details h2 {
+    font-size: 1.8rem;
+    margin-left: 15px;
+  }
+
+  .weather-details p {
+    font-size: 1.2rem;
+    margin-left: 15px;
+  }
+
+  #weather-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  #weather-description {
+    font-size: 1.2rem;
+  }
+
+  #weather-widget {
+    padding: 15px;
+  }
+
+  #weather-widget .input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  button#get-weather,
+  button#get-location {
+    width: 100px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .weather-details h2 {
+    font-size: 1.6rem;
+    margin-left: 10px;
+  }
+
+  .weather-details p {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  #weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  #weather-description {
+    font-size: 1rem;
+  }
+
+  #weather-widget {
+    padding: 10px;
+  }
+
+  #weather-widget .input-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

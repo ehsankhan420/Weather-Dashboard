@@ -8,15 +8,20 @@
     padding: 30px;
     box-shadow: 3px 0 20px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
     transition: all 0.3s ease;
-  }
-  
-  .side-menu:hover {
+    position: fixed; /* Fixed for consistent behavior */
+    top: 0;
+    bottom: 0;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Ensure scroll when content overflows */
+}
+
+.side-menu:hover {
     box-shadow: 6px 0 25px rgba(0, 0, 0, 1); /* Stronger shadow on hover */
     transform: scale(1.02); /* Slightly enlarges on hover */
-  }
-  
-  .side-menu .logo {
-    margin-left:30px;
+}
+
+.side-menu .logo {
+    margin-left: 30px;
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 30px;
@@ -24,34 +29,35 @@
     color: #fff;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Strong text shadow */
     animation: glow 2s infinite alternate; /* Glowing animation */
-  }
-  
-  @keyframes glow {
+}
+
+@keyframes glow {
     0% {
-      text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
     }
     100% {
-      text-shadow: 3px 3px 20px rgba(30, 144, 255, 1); /* Bright blue glow */
+        text-shadow: 3px 3px 20px rgba(30, 144, 255, 1); /* Bright blue glow */
     }
-  }
-  
-  .side-menu ul {
+}
+
+.side-menu ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .side-menu ul li {
+    margin: 0;
+}
+
+.side-menu ul li {
     margin: 20px 0;
     transition: transform 0.3s ease, background-color 0.3s ease;
     overflow: hidden;
-  }
-  
-  .side-menu ul li:hover {
+}
+
+.side-menu ul li:hover {
     transform: translateX(5px); /* Moves slightly to the right on hover */
     background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
-  }
-  
-  .side-menu ul li a {
+}
+
+.side-menu ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
@@ -60,9 +66,9 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0));
     transition: all 0.4s ease;
     position: relative;
-  }
-  
-  .side-menu ul li a:after {
+}
+
+.side-menu ul li a:after {
     content: '';
     position: absolute;
     left: 0;
@@ -75,30 +81,30 @@
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
-  }
-  
-  .side-menu ul li a:hover:after,
-  .side-menu ul li a.active:after {
+}
+
+.side-menu ul li a:hover:after,
+.side-menu ul li a.active:after {
     opacity: 1;
     transform: scaleX(1); /* Expands highlight from left to right */
-  }
-  
-  .side-menu ul li a:hover,
-  .side-menu ul li a.active {
+}
+
+.side-menu ul li a:hover,
+.side-menu ul li a.active {
     color: #1e90ff; /* Bright blue for hover/active state */
     background: linear-gradient(90deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.4)); /* Highlighted gradient */
     padding-left: 30px; /* Padding effect on hover */
     font-weight: 700; /* Bold text */
     text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Glowing text */
-  }
-  
-  .side-menu ul li:hover {
+}
+
+.side-menu ul li:hover {
     background-color: rgba(30, 144, 255, 0.1); /* Subtle background highlight */
     transform: translateX(10px); /* Shifts the item right on hover */
-  }
-  
-  /* Additional Styling */
-  .side-menu ul li::before {
+}
+
+/* Additional Styling */
+.side-menu ul li::before {
     content: '';
     position: absolute;
     left: 0;
@@ -108,19 +114,18 @@
     transition: transform 0.4s ease;
     transform: scaleY(0); /* Initially hidden */
     transform-origin: top;
-  }
-  
-  .side-menu ul li:hover::before {
-    transform: scaleY(1); /* Grows the line on hover */
-  }
-  
+}
 
-  /* Sidebar Weather Icon Background */
+.side-menu ul li:hover::before {
+    transform: scaleY(1); /* Grows the line on hover */
+}
+
+/* Sidebar Weather Icon Background */
 .side-menu {
     position: relative;
-  }
-  
-  .side-menu::before {
+}
+
+.side-menu::before {
     content: '';
     position: absolute;
     top: 50px;
@@ -132,20 +137,65 @@
     background-position: center; /* Faded background effect */
     transform: translate(-50%, -50%);
     z-index: -1; /* Ensure it stays behind the sidebar content */
-  }
-  
+}
 
-  /* Media Queries */
-@media (max-width: 1024px) {
+/* Media Queries */
+@media screen and (max-width: 768px) {
     .side-menu {
-        width: 180px; /* More compact on smaller screens */
+        width: 100%;
+        height: 300px; /* Fixed height for smaller screens */
+        padding: 10px;
+        box-shadow: none; /* Remove shadow on smaller screens */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add bottom border */
+        display: flex;
+        justify-content: space-around; /* Space items horizontally */
+        position: relative;
+        overflow-y: auto; /* Allow scrolling if content exceeds max height */
     }
-  
-    .side-menu:hover {
-        width: 200px; /* Adjust expansion on hover */
+
+    .side-menu ul {
+        display: flex;
+        flex-direction: row; /* Change the menu to horizontal layout */
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
     }
-  
+
+    .side-menu ul li {
+        margin: 0 10px; /* Adjust margin for horizontal layout */
+        transform: none; /* Remove hover translation */
+    }
+
+    .side-menu ul li:hover {
+        transform: none; /* No hover transform */
+    }
+
     .side-menu ul li a {
-        font-size: 0.9rem; /* Smaller text for responsiveness */
+        padding: 10px 15px;
+        font-size: 1rem; /* Adjust font size for small screens */
+        text-align: center; /* Center the text */
     }
-  }
+
+    .side-menu .logo {
+        font-size: 1.5rem; /* Adjust logo size */
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .side-menu {
+        padding: 5px;
+        height: 200px; /* Reduced height for very small screens */
+        overflow-y: auto;
+    }
+
+    .side-menu ul li a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .side-menu .logo {
+        font-size: 1.2rem;
+    }
+}

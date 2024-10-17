@@ -1,5 +1,4 @@
 /* CSS for the search heading */
-/* CSS for the search heading */
 .search-heading {
     font-size: 24px;
     color: #0072ff; /* Dark blue-gray color */
@@ -8,9 +7,9 @@
     text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.4); /* Subtle shadow effect */
     font-weight: 600; /* Bold font weight */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  .forecast-heading {
+}
+
+.forecast-heading {
     margin-bottom: 20px;
     font-size: 24px;
     color: #0072ff; /* Bright blue color */
@@ -19,14 +18,39 @@
     text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.4); /* Subtle shadow effect */
     font-weight: 600; /* Bold font weight */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  /* Add hover effects for both headings */
-  .search-heading:hover,
-  .forecast-heading:hover {
+}
+
+/* Add hover effects for both headings */
+.search-heading:hover,
+.forecast-heading:hover {
     color: #0056b3; /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
     text-shadow: 1px 1px 8px rgba(0, 114, 255, 0.6); /* Enhance shadow on hover */
-  }
-  
-  
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets (screen width less than 768px) */
+@media screen and (max-width: 768px) {
+    .search-heading, .forecast-heading {
+        font-size: 22px; /* Slightly smaller font for tablets */
+        text-align: center; /* Center the heading for better readability */
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+}
+
+/* For phones (screen width less than 480px) */
+@media screen and (max-width: 480px) {
+    .search-heading, .forecast-heading {
+        font-size: 18px; /* Even smaller font for phones */
+        text-align: center; /* Center the heading */
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+
+    .search-heading:hover,
+    .forecast-heading:hover {
+        transform: none; /* Remove hover lift effect on smaller screens */
+    }
+}
