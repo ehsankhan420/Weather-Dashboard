@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard - Tables</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fitlers.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="side-menu">
+      <div class="logo">Weather App</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="tables.html" class="active">Tables</a></li>
+      </ul>
+    </nav>
+  
+    <main>
+      <section id="forecast-widget">
+        <section id="search-section">
+          <h2 class="search-heading">Search for a City</h2>
+          <div class="input-group">
+            <input type="text" id="city-input" placeholder="Enter city name" />
+            <button id="get-weather" class="btn">Get Weather</button>
+          </div>
+          <div id="loading-spinner" class="spinner hidden"></div>
+        </section>
+  
+        <h2 class="forecast-heading">5-Day Forecast</h2>
+        <table id="forecast-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Temperature</th>
+              <th>Condition</th>
+              <th>Icon</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+  
+        <button id="wd-filters-btn" class="wd-btn-filters">Filters</button>
+        <div class="wd-popup-overlay" id="filter-overlay"></div>
+        <div class="wd-filter-popup" id="wd-filter-popup">
+          <h3>Select a Filter</h3>
+          <button id="sort-asc" class="wd-filter-btn">Sort Temperatures (Ascending)</button>
+          <button id="sort-desc" class="wd-filter-btn">Sort Temperatures (Descending)</button>
+          <button id="filter-rain" class="wd-filter-btn">Filter Rainy Days</button>
+          <button id="highest-temp" class="wd-filter-btn">Show Day with Highest Temperature</button>
+          <button id="wd-close-popup" class="wd-filter-btn" style="background-color: #f44336;">Close</button>
+        </div>
+  
+        <div class="pagination">
+          <button id="prev-page" class="btn">Previous</button>
+          <span id="page-number">Page 1</span>
+          <button id="next-page" class="btn">Next</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <div class="wrapper">
+    <div id="chatbot-container" class="box hidden">
+      <div id="chat-messages"></div>
+      <div id="chat-input-container" class="typing-area">
+        <div class="input-field">
+          <input type="text" id="chat-input" placeholder="Type your message..." required>
+          <button id="chat-submit">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="open-chat">Chat with Bot</button>
+  </div>
+
+  <div class="profile-container">
+    <img src="b55f1ac9a8470c8df107f57722f433ca.jpg" alt="Profile" class="profile-pic" id="profile-pic">
+  </div>
+
+  <div id="profile-popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-popup" id="close-popup">&times;</span>
+      <p class="action-text">Manage your profile or view it.</p>
+      <div class="profile-actions">
+        <a href="view-profile.html" class="btn">View Profile</a>
+        <a href="edit-profile.html" class="btn edit-btn">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+  <script src="app.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePic = document.getElementById('profile-pic');
+      const popup = document.getElementById('profile-popup');
+      const closePopup = document.getElementById('close-popup');
+
+      profilePic.addEventListener('click', function() {
+        popup.classList.remove('hidden');
+        popup.classList.add('show');
+      });
+
+      closePopup.addEventListener('click', function() {
+        popup.classList.add('hidden');
+        popup.classList.remove('show');
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+          popup.classList.add('hidden');
+          popup.classList.remove('show');
+        }
+      });
+    });
+  </script>
+
+  <script>
+    const filterPopup = document.getElementById('wd-filter-popup');
+    const filterOverlay = document.getElementById('filter-overlay');
+    const mainContent = document.getElementById('main-content');
+    const filterButton = document.getElementById('wd-filters-btn');
+    const closeButton = document.getElementById('wd-close-popup');
+
+    function showFilterPopup() {
+      filterPopup.classList.add('wd-show');
+      filterOverlay.style.display = 'block';
+      mainContent.classList.add('blur-background');
+    }
+
+    function hideFilterPopup() {
+      filterPopup.classList.remove('wd-show');
+      filterOverlay.style.display = 'none';
+      mainContent.classList.remove('blur-background');
+    }
+
+    filterButton.addEventListener('click', showFilterPopup);
+    closeButton.addEventListener('click', hideFilterPopup);
+    filterOverlay.addEventListener('click', hideFilterPopup);
+
+    window.addEventListener('click', function(event) {
+      if (event.target === filterOverlay) {
+        hideFilterPopup();
+      }
+    });
+  </script>
+</body>
+</html>

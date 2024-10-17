@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Profile</title>
+  <link rel="stylesheet" href="sty.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video id="background-video" autoplay loop>
+        <source src="world.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+  <div class="profile-container">
+    <h2>Your Profile</h2>
+
+    <div class="profile-card">
+      <img src="b55f1ac9a8470c8df107f57722f433ca.jpg" alt="Profile Picture" class="profile-picture" id="profile-img">
+      
+      <div class="profile-info">
+        <p><strong>Name:</strong> <span id="profile-name">John Doe</span></p>
+        <p><strong>Email:</strong> <span id="profile-email">john.doe@example.com</span></p>
+        <p><strong>Location:</strong> <span id="profile-location">New York, USA</span></p>
+        <p><strong>Member since:</strong> January 2023</p>
+      </div>
+      
+      <a href="edit-profile.html" class="btn edit-btn">Edit Profile</a>
+    </div>
+
+    <input type="file" id="file-input" accept="image/*" style="display: none;">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

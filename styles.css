@@ -1,0 +1,844 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  color: #000000;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #74ebd5;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #74ebd5;
+  color: #fff;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Container */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Side Menu */
+.side-menu {
+  width: 250px;
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a); /* Dark gradient for a modern look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  box-shadow: 3px 0 20px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+  transition: all 0.3s ease;
+}
+
+.side-menu:hover {
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 1); /* Stronger shadow on hover */
+  transform: scale(1.02); /* Slightly enlarges on hover */
+}
+
+.side-menu .logo {
+  margin-left:30px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Strong text shadow */
+  animation: glow 2s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 3px 3px 20px rgba(30, 144, 255, 1); /* Bright blue glow */
+  }
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.side-menu ul li:hover {
+  transform: translateX(5px); /* Moves slightly to the right on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+}
+
+.side-menu ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.0));
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.side-menu ul li a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 144, 255, 0.3); /* Blue highlight */
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.side-menu ul li a:hover:after,
+.side-menu ul li a.active:after {
+  opacity: 1;
+  transform: scaleX(1); /* Expands highlight from left to right */
+}
+
+.side-menu ul li a:hover,
+.side-menu ul li a.active {
+  color: #1e90ff; /* Bright blue for hover/active state */
+  background: linear-gradient(90deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.4)); /* Highlighted gradient */
+  padding-left: 30px; /* Padding effect on hover */
+  font-weight: 700; /* Bold text */
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Glowing text */
+}
+
+.side-menu ul li:hover {
+  background-color: rgba(30, 144, 255, 0.1); /* Subtle background highlight */
+  transform: translateX(10px); /* Shifts the item right on hover */
+}
+
+/* Additional Styling */
+.side-menu ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(30, 144, 255, 1)); /* Animated line on the left */
+  transition: transform 0.4s ease;
+  transform: scaleY(0); /* Initially hidden */
+  transform-origin: top;
+}
+
+.side-menu ul li:hover::before {
+  transform: scaleY(1); /* Grows the line on hover */
+}
+
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: linear-gradient(to bottom right, #18b6ffb2, #f3f3f3);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather Widget */
+#weather-widget {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Group Styles */
+#weather-widget .input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#forecast-widget {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Group Styles */
+#forecast-widget .input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Search Bar Styles */
+#city-input {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 2px solid #74ebd5;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif; /* Stylish font */
+  position: relative; /* For placeholder animation */
+}
+
+/* Placeholder style */
+#city-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1; /* Show placeholder */
+  transition: opacity 0.3s ease; /* Smooth transition for placeholder */
+}
+
+/* Focus effect */
+#city-input:focus {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: #9face6;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Gradient background on focus */
+  animation: pulse 0.5s ease-in-out; /* Pulse animation on focus */
+}
+
+/* Placeholder visibility effect */
+#city-input:focus::placeholder {
+  opacity: 0; /* Hide placeholder on focus */
+}
+
+/* Animation for input focus */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.03); /* Slightly enlarge on focus */
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  #city-input {
+      max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+
+/* Common Button Styles */
+button#get-weather,
+button#get-location {
+  width: 150px; /* Set a fixed width for consistency */
+  margin-left: 20px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #0072ff, #00c6ff); /* Blue gradient */
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Updated for a more pronounced shadow */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* Hover effect: Deepens the gradient and adds more shadow */
+button#get-weather:hover,
+button#get-location:hover {
+  background: linear-gradient(135deg, #005bea, #00c6ff);
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* Button lift on hover */
+}
+
+/* Animated ripple effect */
+button#get-weather::before,
+button#get-location::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15); /* Light ripple effect */
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0;
+}
+
+button#get-weather:hover::before,
+button#get-location:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expand ripple effect */
+}
+
+/* Ensure button text remains above ripple effect */
+button#get-weather,
+button#get-location {
+  z-index: 1;
+  position: relative;
+}
+
+/* Weather Details */
+.weather-details {
+  text-align: left;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.weather-details h2 {
+  margin-left: 30px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-details h2 i {
+  margin-right: 15px;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.weather-details p {
+  margin-bottom: 18px;
+  margin-left: 25px;
+  font-size: 1.6rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+}
+
+.weather-details p i {
+  margin-right: 10px;
+  font-size: 1.8rem;
+  color: #007bff;
+}
+
+.weather-details p strong {
+  color: #007bff;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.weather-details p span {
+  margin-left: 10px;
+}
+
+.weather-details img.weather-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.weather-details p#weather-description {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #777;
+  margin-left: 25px;
+}
+
+.weather-details:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Charts */
+/* Charts */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Gradient background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjusting the size and shadow for the charts */
+.chart-container canvas {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 400px;  /* Maximum width (adjusted) */
+  max-height: 400px; /* Maximum height (adjusted) */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for canvas */
+.chart-container canvas:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
+}
+
+/* Styling chart colors to be more vibrant */
+.chartjs-render-monitor {
+  background-color: #74ebd5; /* Soft teal */
+  border: 2px solid #9face6; /* Subtle border to match theme */
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adding a gradient background to the charts */
+.chart-gradient {
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Hover effect for entire chart container */
+.chart-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+
+
+/* Unit Toggle */
+.unit-toggle {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #000000;
+  transition: .4s;
+  border-radius: 34px;
+}
+/* Weather Icon Styling */
+.forecast-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #24eb56;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#unit-label {
+  font-size: 1rem;
+}
+
+.spinner {
+  border: 8px solid #000000;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  display: block;
+  margin: 20px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Forecast Table */
+#forecast-section h2 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #000000; /* Light color for heading for contrast */
+  font-family: 'Poppins', sans-serif; /* Consistent font family */
+}
+
+/* Table Styles */
+#forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: rgba(30, 30, 30, 0.9); /* Darker background for the table */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensures no overflow on rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Smooth scaling effect */
+}
+
+#forecast-table:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+#forecast-table th,
+#forecast-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f0f0f0; /* Light text color for better readability */
+  position: relative; /* Required for animation effect */
+}
+
+/* Hover effect on table cells */
+#forecast-table td:hover {
+  background: rgba(255, 255, 255, 0.05); /* Light highlight on hover */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+#forecast-table th {
+  background: linear-gradient(135deg, #4a4a4a, #3a3a3a); /* Gradient background for headers */
+  font-weight: 600; /* Semi-bold for header */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Soft text shadow */
+}
+
+#forecast-table tr:nth-child(even) {
+  background-color: rgba(40, 40, 40, 0.7); /* Alternating row color for better contrast */
+}
+
+#forecast-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px; /* Spacing above pagination */
+}
+
+.pagination .btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #555, #777); /* Gradient background for buttons */
+  color: #fff; /* White text for buttons */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; /* Added transition for scaling */
+  position: relative; /* Required for animation effect */
+}
+
+.pagination .btn:hover {
+  background: linear-gradient(135deg, #666, #888); /* Lighter background on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.pagination .btn:disabled {
+  background-color: #333; /* Darker for disabled state */
+  cursor: not-allowed; /* Change cursor for disabled */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .side-menu {
+      width: 180px; /* More compact on smaller screens */
+  }
+
+  .side-menu:hover {
+      width: 200px; /* Adjust expansion on hover */
+  }
+
+  .side-menu ul li a {
+      font-size: 0.9rem; /* Smaller text for responsiveness */
+  }
+}
+
+
+/* Profile Picture Styles */
+.profile-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.profile-pic {
+  width: 60px; /* Slightly larger for better visibility */
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #fa6262; /* Slightly thicker border for emphasis */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  border-color: #f30000; /* Change border color on hover */
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  animation: pop-in 0.4s ease;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Close Button in top-right corner */
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+  color: #ff0000;
+}
+
+/* Pop-in Animation */
+@keyframes pop-in {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Profile Actions - Button Container */
+.profile-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.btn, .edit-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #74ebd5;
+}
+
+.edit-btn {
+  background-color: #28a745;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+/* Text above buttons */
+.action-text {
+  font-size: 18px;  /* Larger text size */
+  font-weight: 600;  /* Make the text bold */
+  color: #333;       /* Darker color for emphasis */
+  margin: 20px 0;    /* Add space above and below */
+  text-align: center; /* Center the text */
+}
+
+/* Adjusting the Weather Icon and Position */
+#weather-icon {
+  width: 150px; /* Reduced size */
+  height: 150px;
+  display: block;
+  margin: 0 395px 20px; /* Center and add spacing below */
+  position: relative;
+  z-index: 1; /* Ensures it stays above other content */
+}
+
+.weather-details {
+  position: relative;
+}
+
+#weather-description {
+  position: absolute;
+  top: 50%; /* Vertically center the description */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the description is above the icon */
+  font-style: italic;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0); /* Ensures readability over the icon */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
+}
+
+/* Sidebar Weather Icon Background */
+.side-menu {
+  position: relative;
+}
+
+.side-menu::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 50px; /* Reduced the size */
+  height: 50px;
+  background-image: url('cloudy.png'); /* Updated to use "cloudy.png" */
+  background-size: cover;
+  background-position: center; /* Faded background effect */
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensure it stays behind the sidebar content */
+}
+
+
+/* CSS for the search heading */
+/* CSS for the search heading */
+.search-heading {
+  font-size: 24px;
+  color: #0072ff; /* Dark blue-gray color */
+  text-align: left;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.4); /* Subtle shadow effect */
+  font-weight: 600; /* Bold font weight */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.forecast-heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #0072ff; /* Bright blue color */
+  text-align: left;
+  margin-top: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.4); /* Subtle shadow effect */
+  font-weight: 600; /* Bold font weight */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add hover effects for both headings */
+.search-heading:hover,
+.forecast-heading:hover {
+  color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  text-shadow: 1px 1px 8px rgba(0, 114, 255, 0.6); /* Enhance shadow on hover */
+}

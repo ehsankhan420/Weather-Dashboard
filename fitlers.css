@@ -1,0 +1,134 @@
+/* Styling for filter pop-up */
+.wd-filter-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: #1e1e1e; /* Darker background for a modern look */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for depth */
+    backdrop-filter: blur(10px); /* Optional blur effect */
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.wd-filter-popup h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Soft text shadow */
+    transition: color 0.3s ease;
+}
+
+.wd-filter-popup .wd-filter-btn {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    background: linear-gradient(135deg, #0072ff, #00c6ff); /* Updated to match sample */
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.wd-filter-popup .wd-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15); /* Light ripple effect */
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+
+.wd-filter-popup .wd-filter-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Expand ripple effect */
+}
+
+.wd-filter-popup .wd-filter-btn:hover {
+    background: linear-gradient(135deg, #005bea, #00c6ff);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4); /* Enhanced shadow */
+}
+
+.wd-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+/* Filters Button */
+.wd-btn-filters {
+    margin: 10px 0;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #0072ff, #00c6ff); /* Updated gradient for blue theme */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Rounded to match sample buttons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+.wd-btn-filters:hover {
+    background: linear-gradient(135deg, #005bea, #00c6ff); /* Deepened blue on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Keyframes for smooth pop-up fade in */
+@keyframes wd-popup-fade-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Close button styling */
+#wd-close-popup {
+    background-color: #f44336;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px;
+}
+
+#wd-close-popup:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+/* Add blur effect to the background when filter is active */
+.blur-background {
+    filter: blur(10px); /* Adjust the blur amount as needed */
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}

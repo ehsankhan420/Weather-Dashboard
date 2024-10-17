@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Side Menu -->
+    <nav class="side-menu">
+      <div class="logo">Weather App</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="tables.html">Tables</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Weather Widget -->
+      <section id="weather-widget">
+        <h2 class="search-heading">Search for a City</h2>
+        <div class="input-group">
+          <input type="text" id="city-input" placeholder="Enter city name">
+          <button id="get-weather">Get Weather</button>
+          <button id="get-location">Use Current Location</button>
+        </div>
+
+        <!-- Geolocation Button -->
+        <div id="loading-spinner" class="spinner hidden"></div>
+
+        <div id="weather-details" class="weather-details">
+          <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+          
+          <!-- City Name with Icon -->
+          <h2><i class="fas fa-city"></i> <span id="city-name"></span></h2>
+          
+          <!-- Temperature with Icon -->
+          <p><i class="fas fa-thermometer-half"></i> <strong>Temperature: </strong><span id="temperature"></span></p>
+          
+          <!-- Weather Description (no icon needed here) -->
+          <p id="weather-description"></p>
+          
+          <!-- Humidity with Icon -->
+          <p><i class="fas fa-tint"></i> <strong>Humidity: </strong><span id="humidity"></span></p>
+          
+          <!-- Wind Speed with Icon -->
+          <p><i class="fas fa-wind"></i> <strong>Wind Speed: </strong><span id="wind-speed"></span></p>
+        </div>
+        
+        <!-- Charts -->
+        <div class="chart-container">
+          <canvas id="temp-bar-chart"></canvas>
+          <canvas id="weather-doughnut-chart"></canvas>
+          <canvas id="temp-line-chart"></canvas>
+        </div>
+
+        <!-- Unit Conversion Toggle -->
+        <div class="unit-toggle">
+          <label for="unit-toggle">Show in Fahrenheit</label>
+          <label class="switch">
+            <input type="checkbox" id="unit-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <!-- Loading Spinner -->
+
+      </section>
+    </main>
+  </div>
+<!-- Profile Picture -->
+<div class="profile-container">
+  <img src="b55f1ac9a8470c8df107f57722f433ca.jpg" alt="Profile" class="profile-pic" id="profile-pic">
+</div>
+
+<!-- Profile Popup -->
+<div id="profile-popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close-popup" id="close-popup">&times;</span>
+    <p class="action-text">Manage your profile or view it.</p>
+    <div class="profile-actions">
+      <a href="view-profile.html" class="btn">View Profile</a>
+      <a href="edit-profile.html" class="btn edit-btn">Edit Profile</a>
+    </div>
+  </div>
+</div>
+</div>
+  <script src="app1.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePic = document.getElementById('profile-pic');
+      const popup = document.getElementById('profile-popup');
+      const closePopup = document.getElementById('close-popup');
+
+      // Open profile popup
+      profilePic.addEventListener('click', function() {
+        popup.classList.remove('hidden');
+        popup.classList.add('show'); // Adding 'show' class for smooth animation
+      });
+
+      // Close profile popup
+      closePopup.addEventListener('click', function() {
+        popup.classList.add('hidden');
+        popup.classList.remove('show');
+      });
+
+      // Close popup when clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+          popup.classList.add('hidden');
+          popup.classList.remove('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

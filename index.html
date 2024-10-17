@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard - Home</title>
+  <link rel="stylesheet" href="Styless.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+  background-image: url('image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Weather Dashboard</h1>
+    <div class="menu">
+      <a href="dashboard.html" class="btn">Go to Dashboard</a>
+      <a href="tables.html" class="btn">Go to Tables</a>
+    </div>
+
+    <!-- Profile Picture -->
+    <div class="profile-container">
+      <img src="b55f1ac9a8470c8df107f57722f433ca.jpg" alt="Profile" class="profile-pic" id="profile-pic">
+    </div>
+
+    <!-- Profile Popup -->
+    <div id="profile-popup" class="popup hidden">
+      <div class="popup-content">
+        <span class="close-popup" id="close-popup">&times;</span>
+
+        <!-- Text Above Buttons -->
+        <p class="action-text">Manage your profile or view it.</p>
+        <div class="profile-actions">
+          <a href="view-profile.html" class="btn">View Profile</a>
+          <a href="edit-profile.html" class="btn edit-btn">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePic = document.getElementById('profile-pic');
+      const popup = document.getElementById('profile-popup');
+      const closePopup = document.getElementById('close-popup');
+
+      // Open profile popup
+      profilePic.addEventListener('click', function() {
+        popup.classList.remove('hidden');
+        popup.classList.add('show');
+      });
+
+      // Close profile popup
+      closePopup.addEventListener('click', function() {
+        popup.classList.add('hidden');
+        popup.classList.remove('show');
+      });
+
+      // Close popup when clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+          popup.classList.add('hidden');
+          popup.classList.remove('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
