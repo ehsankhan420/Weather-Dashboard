@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="fitlers.css">
   <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="headings.css">
+  <link rel="stylesheet" href="sidemenu.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
 </head>
@@ -122,6 +124,14 @@
       });
     });
   </script>
+<script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const sideMenu = document.querySelector('.side-menu');
+
+  toggleButton.addEventListener('click', () => {
+    sideMenu.classList.toggle('open');
+  });
+</script>
 
   <script>
     const filterPopup = document.getElementById('wd-filter-popup');

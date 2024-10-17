@@ -1,0 +1,132 @@
+/* Common Button Styles */
+button#get-weather,
+button#get-location {
+  width: 150px; /* Set a fixed width for consistency */
+  margin-left: 20px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #0072ff, #00c6ff); /* Blue gradient */
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Updated for a more pronounced shadow */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* Hover effect: Deepens the gradient and adds more shadow */
+button#get-weather:hover,
+button#get-location:hover {
+  background: linear-gradient(135deg, #005bea, #00c6ff);
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* Button lift on hover */
+}
+
+/* Animated ripple effect */
+button#get-weather::before,
+button#get-location::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15); /* Light ripple effect */
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0;
+}
+
+button#get-weather:hover::before,
+button#get-location:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expand ripple effect */
+}
+
+/* Ensure button text remains above ripple effect */
+button#get-weather,
+button#get-location {
+  z-index: 1;
+  position: relative;
+}
+
+/* Weather Details */
+.weather-details {
+  text-align: left;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.weather-details h2 {
+  margin-left: 30px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-details h2 i {
+  margin-right: 15px;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.weather-details p {
+  margin-bottom: 18px;
+  margin-left: 25px;
+  font-size: 1.6rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+}
+
+.weather-details p i {
+  margin-right: 10px;
+  font-size: 1.8rem;
+  color: #007bff;
+}
+
+.weather-details p strong {
+  color: #007bff;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.weather-details p span {
+  margin-left: 10px;
+}
+
+.weather-details img.weather-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.weather-details p#weather-description {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #777;
+  margin-left: 25px;
+}
+
+.weather-details:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+

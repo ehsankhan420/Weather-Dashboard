@@ -1,0 +1,52 @@
+/* Charts */
+/* Charts */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Gradient background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Adjusting the size and shadow for the charts */
+  .chart-container canvas {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 400px;  /* Maximum width (adjusted) */
+    max-height: 400px; /* Maximum height (adjusted) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for canvas */
+  .chart-container canvas:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
+  }
+  
+  /* Styling chart colors to be more vibrant */
+  .chartjs-render-monitor {
+    background-color: #74ebd5; /* Soft teal */
+    border: 2px solid #9face6; /* Subtle border to match theme */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Adding a gradient background to the charts */
+  .chart-gradient {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+  }
+  
+  /* Hover effect for entire chart container */
+  .chart-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+  }
