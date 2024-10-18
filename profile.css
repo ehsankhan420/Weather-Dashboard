@@ -3,7 +3,7 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    z-index: 1000;
+    z-index: 9999;
   }
   
   .profile-pic {
@@ -124,5 +124,76 @@
     color: #333;       /* Darker color for emphasis */
     margin: 20px 0;    /* Add space above and below */
     text-align: center; /* Center the text */
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* For screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    .profile-pic {
+      width: 50px; /* Adjust the size for smaller screens */
+      height: 50px;
+      border: 2px solid #fa6262; /* Slightly thinner border */
+    }
+  
+    .popup-content {
+      padding: 20px; /* Adjust padding for smaller screens */
+      max-width: 350px;
+    }
+  
+    .btn, .edit-btn {
+      font-size: 14px; /* Smaller font size for buttons */
+      padding: 8px 16px;
+    }
+  
+    .action-text {
+      font-size: 16px; /* Adjust font size for text */
+    }
+  }
+  
+  /* For screens smaller than 480px (small phones) */
+  @media screen and (max-width: 480px) {
+    .profile-pic {
+      width: 45px; /* Adjust the size for smaller phones */
+      height: 45px;
+      border: 2px solid #fa6262;
+    }
+  
+    .popup-content {
+      padding: 15px;
+      max-width: 300px;
+    }
+  
+    .btn, .edit-btn {
+      font-size: 13px;
+      padding: 6px 14px;
+    }
+  
+    .action-text {
+      font-size: 14px;
+    }
+  }
+  
+  /* For screens smaller than 375px (very small phones) */
+  @media screen and (max-width: 375px) {
+    .profile-pic {
+      width: 40px; /* Even smaller size for very small screens */
+      height: 40px;
+      border: 2px solid #fa6262;
+    }
+  
+    .popup-content {
+      padding: 10px;
+      max-width: 250px;
+    }
+  
+    .btn, .edit-btn {
+      font-size: 12px;
+      padding: 5px 12px;
+    }
+  
+    .action-text {
+      font-size: 13px;
+    }
   }
   
