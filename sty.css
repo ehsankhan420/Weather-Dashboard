@@ -236,7 +236,6 @@ a {
   }
 
   h1 {
-    margin-right: 40px;
 
     font-size: 24px;
   }
@@ -246,7 +245,6 @@ a {
     max-width: 270px;
   }
   .profile-form {
-    margin-right: 45px;
     margin-bottom: 200px;
     padding: 30px;
     max-width: 270px;
