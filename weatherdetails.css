@@ -336,7 +336,7 @@ button#get-location {
 
   #weather-widget {
     padding: 10px;
-    margin-top: 150px; /* Move the entire widget down */
+    margin-top: 170px; /* Move the entire widget down */
   }
 
   #weather-widget .input-group {

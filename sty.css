@@ -1,206 +1,267 @@
 /* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #eef2f7;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  h1, h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: #2c3e50;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  /* Profile View Container */
-  .profile-view-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Subtle gradient background */
-    text-align: center;
-  }
-  
-  h2 {
-    margin-left: 560px;
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #34495e;
-  }
-  
-  .profile-card {
-    margin-left: 390px;
-    background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Stronger shadow for a floating effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 450px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  .profile-card:hover {
-    transform: translateY(-10px); /* Slight hover lift effect */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
-  }
-  
-  .profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-picture:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-  }
-  
-  .profile-info p {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #555;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  
-  .edit-btn {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #ff0000, #331717); /* Gradient button */
-    color: white;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .edit-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px); /* Slight lift on hover */
-  }
-  
-/* Video background styling */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire background */
-    z-index: -1; /* Puts the video behind the content */
-  }
-  
-  /* Profile Edit Container */
-  .profile-edit-container {
-    display: flex;
-    flex-direction: column; /* Stacks items vertically */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    z-index: 1; /* Ensures the container is above the video */
-  }
-  
-  /* Header styling */
-  h1 ,h2{
-    font-size: 36px; /* Increased font size for better visibility */
-    margin-top: 60px;
-    margin-bottom: 20px; /* Space between header and form */
-    color: #ffffff; /* Changed to white for contrast against the background */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow for depth and visibility */
-    font-weight: 700; /* Bold weight for prominence */
-    letter-spacing: 1px; /* Slightly increases spacing between letters */
-    text-transform: uppercase; /* Transforms text to uppercase for emphasis */
-    font-family: 'Poppins', sans-serif; /* Ensure stylish font is used */
+  margin: 0;
+  padding: 0;
+  background-color: #eef2f7;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-  
-  /* Profile Form Styling with Lowered Opacity */
+/* Header and Text Styling */
+h1 ,h2 {
+  font-size: 36px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+/* Profile View Container */
+.profile-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  padding: 10px;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.1);
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.edit-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #ff0000, #331717);
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Video Background Styling */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+/* Profile Edit Container */
+.profile-edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 1;
+  padding: 10px;
+}
+
+.profile-form {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  max-width: 300px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #34495e;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Button styling */
+.save-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #28a745, #53d769);
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+}
+
+.cancel-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-3px);
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 20px;
+  }
+
+  .profile-card, .profile-form {
+    padding: 15px;
+    max-width: 250px;
+  }
+
+  .profile-picture {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+  }
+
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  h1 {
+    margin-right: 40px;
+
+    font-size: 24px;
+  }
+
+  .profile-card {
+    padding: 20px;
+    max-width: 270px;
+  }
   .profile-form {
-    background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    max-width: 450px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 45px;
+    margin-bottom: 200px;
+    padding: 30px;
+    max-width: 270px;
   }
-  
-  .profile-form:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  .profile-picture {
+    width: 70px;
+    height: 70px;
   }
-  
-  /* Form styling */
-  .form-group {
-    margin-bottom: 20px;
+
+  .profile-info p {
+    font-size: 13px;
   }
-  
-  .form-group label {
-    font-size: 16px;
-    color: #34495e;
-    margin-bottom: 8px;
-    display: block;
-    font-weight: 600;
+
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 10px 18px;
+    font-size: 13px;
   }
-  
-  .form-group input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #3498db;
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-  }
-  
-  /* Button styling */
-  .save-btn {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #28a745, #53d769);
-    color: white;
-    border-radius: 30px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .save-btn:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
-  }
-  
-  .cancel-btn {
-    margin-top: 15px;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border-radius: 30px;
-    text-align: center;
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #c82333;
-    transform: translateY(-3px);
-  }
-  
+}
