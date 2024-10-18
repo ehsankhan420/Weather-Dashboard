@@ -5,7 +5,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
+    width: 90%; /* Make width flexible for smaller screens */
+    max-width: 350px; /* Ensure a max width */
     background-color: #1e1e1e; /* Darker background for a modern look */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -126,9 +127,36 @@
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-
 /* Add blur effect to the background when filter is active */
 .blur-background {
     filter: blur(10px); /* Adjust the blur amount as needed */
     transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wd-filter-popup {
+        width: 95%; /* Slightly wider on smaller screens */
+    }
+
+    .wd-btn-filters {
+        padding: 10px 16px;
+        font-size: 1rem; /* Reduce button size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .wd-filter-popup {
+        width: 100%; /* Full width for very small screens */
+        max-width: 90%; /* Keep some margin on the sides */
+    }
+
+    .wd-btn-filters {
+        padding: 8px 14px;
+        font-size: 0.9rem; /* Further reduce button size for small phones */
+    }
+
+    #wd-close-popup {
+        padding: 8px 12px; /* Make close button smaller for small screens */
+    }
 }

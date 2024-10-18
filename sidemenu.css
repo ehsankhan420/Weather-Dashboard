@@ -195,7 +195,7 @@
 /* For very small screens (less than 480px) */
 @media screen and (max-width: 480px) {
     .side-menu {
-        height: 150px; /* Further adjust height */
+        height: 170px; /* Further adjust height */
         padding: 5px 10px; /* Compact padding */
         justify-content: flex-start;
         align-items: center;

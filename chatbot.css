@@ -216,3 +216,67 @@ body {
     background-color: #0056b3;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #chatbot-container {
+        width: 250px; /* Smaller width for small screens */
+        height: 400px; /* Smaller height for small screens */
+        bottom: 0;
+        right: 0;
+        border-radius: 10px; /* Smaller border-radius for small screens */
+        box-shadow: none;
+    }
+
+    #chat-input-container {
+        padding: 8px; /* Reduced padding for small screens */
+    }
+
+    #chat-input {
+        font-size: 11px; /* Smaller font size for input on small screens */
+    }
+
+    #chat-submit {
+        width: 55px; /* Smaller width for submit button */
+        height: 35px; /* Smaller height for submit button */
+        font-size: 12px; /* Smaller font size for submit button */
+    }
+
+    #open-chat {
+        bottom: 100px; /* Raised button higher */
+        right: 20px;
+        padding: 8px 18px; /* Smaller button size */
+        font-size: 12px; /* Smaller font size for button */
+    }
+}
+
+@media (max-width: 768px) {
+    #chatbot-container {
+        width: 280px; /* Smaller width for medium screens */
+        height: 420px; /* Smaller height for medium screens */
+        bottom: 0;
+        right: 0;
+        border-radius: 12px; /* Adjusted border-radius for medium screens */
+    }
+
+    #chat-input-container {
+        padding: 10px; /* Adjusted padding */
+    }
+
+    #chat-input {
+        font-size: 12px; /* Smaller font size */
+    }
+
+    #chat-submit {
+        width: 60px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    #open-chat {
+        bottom: 80px; /* Raised button higher */
+        right: 25px;
+        padding: 10px 22px; /* Adjusted size for medium screens */
+        font-size: 14px;
+    }
+}
