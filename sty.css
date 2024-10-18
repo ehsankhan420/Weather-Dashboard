@@ -232,22 +232,20 @@ a {
 
 @media (max-width: 768px) {
   h2 {
+    margin-right: 70px;
     font-size: 24px;
   }
 
   h1 {
-    margin-left: 40px;
-
     font-size: 24px;
   }
 
   .profile-card {
-    padding: 20px;
+    margin-right: 100px;
+    padding: 10px;
     max-width: 270px;
   }
   .profile-form {
-    margin-left: 45px;
-    margin-bottom: 200px;
     padding: 30px;
     max-width: 270px;
   }
