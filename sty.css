@@ -24,7 +24,6 @@ h1 ,h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-
 a {
   text-decoration: none;
 }
@@ -205,12 +204,23 @@ a {
 }
 
 /* Media Queries for Small Screens */
-@media (max-width: 480px) {
-  h1, h2 {
+@media (max-width: 399px) {
+  h2 {
+    margin-left: 70px;
     font-size: 20px;
   }
 
-  .profile-card, .profile-form {
+  h1 {
+    font-size: 20px;
+  }
+
+  .profile-card{
+    margin-left: 40px;
+    padding: 15px;
+    max-width: 250px;
+  }
+
+  .profile-form {
     padding: 15px;
     max-width: 250px;
   }
@@ -230,6 +240,45 @@ a {
   }
 }
 
+/* Media Queries for Medium Phones (481px - 767px) */
+@media (min-width: 400px) and (max-width: 767px) {
+ h2 {
+    margin-left: 80px;
+    font-size: 28px;
+  }
+
+  h1 {
+    margin-right: 20px;
+    font-size: 28px;
+  }
+
+  .profile-card {
+    margin-left: 60px;
+    padding: 20px;
+    max-width: 280px;
+  }
+
+  .profile-form {
+    margin-right: 35px;
+    padding: 40px;
+    max-width: 280px;
+  }
+
+  .profile-picture {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-info p {
+    font-size: 13px;
+  }
+
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 768px) {
   h2 {
     margin-right: 70px;
@@ -245,10 +294,12 @@ a {
     padding: 10px;
     max-width: 270px;
   }
+
   .profile-form {
     padding: 30px;
     max-width: 270px;
   }
+
   .profile-picture {
     width: 70px;
     height: 70px;
