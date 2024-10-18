@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Forecast Table */
 #forecast-section h2 {
     margin-top: 15px;
     margin-bottom: 20px;
     color: #000000;
     font-family: 'Poppins', sans-serif;
-  }
-  
-  /* Table Styles */
-  #forecast-table {
+}
+
+/* Table Styles */
+#forecast-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -16,50 +28,50 @@
     overflow: hidden; /* Ensures no overflow on rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     transition: transform 0.2s ease; /* Smooth scaling effect */
-  }
-  
-  #forecast-table:hover {
+}
+
+#forecast-table:hover {
     transform: scale(1.02); /* Slightly enlarge on hover */
-  }
-  
-  #forecast-table th, #forecast-table td {
+}
+
+#forecast-table th, #forecast-table td {
     padding: 12px 15px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: #f0f0f0; /* Light text color for better readability */
     position: relative; /* Required for animation effect */
-  }
-  
-  /* Hover effect on table cells */
-  #forecast-table td:hover {
+}
+
+/* Hover effect on table cells */
+#forecast-table td:hover {
     background: rgba(255, 255, 255, 0.05); /* Light highlight on hover */
     transition: background 0.3s ease; /* Smooth transition */
-  }
-  
-  #forecast-table th {
+}
+
+#forecast-table th {
     background: linear-gradient(135deg, #4a4a4a, #3a3a3a); /* Gradient background for headers */
     font-weight: 600; /* Semi-bold for header */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Soft text shadow */
-  }
-  
-  #forecast-table tr:nth-child(even) {
+}
+
+#forecast-table tr:nth-child(even) {
     background-color: rgba(40, 40, 40, 0.7); /* Alternating row color for better contrast */
-  }
-  
-  #forecast-table tr:hover {
+}
+
+#forecast-table tr:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
-  }
-  
-  /* Pagination Styles */
-  .pagination {
+}
+
+/* Pagination Styles */
+.pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 15px; /* Spacing above pagination */
-  }
-  
-  .pagination .btn {
+}
+
+.pagination .btn {
     padding: 8px 16px;
     font-size: 0.9rem;
     background: linear-gradient(135deg, #555, #777); /* Gradient background for buttons */
@@ -69,95 +81,109 @@
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease; /* Added transition for scaling */
     position: relative; /* Required for animation effect */
-  }
-  
-  .pagination .btn:hover {
+}
+
+.pagination .btn:hover {
     background: linear-gradient(135deg, #666, #888); /* Lighter background on hover */
     transform: translateY(-2px); /* Lift effect on hover */
-  }
-  
-  .pagination .btn:disabled {
+}
+
+.pagination .btn:disabled {
     background-color: #333; /* Darker for disabled state */
     cursor: not-allowed; /* Change cursor for disabled */
-  }
-  
-  /* Weather Icon Styling */
-  .forecast-icon {
+}
+
+/* Weather Icon Styling */
+.forecast-icon {
     width: 50px;
     height: 50px;
     object-fit: contain;
-  }
-  
-  #forecast-widget {
+}
+
+#forecast-widget {
     padding: 30px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     margin-top: 50px; /* Move container down by default */
-  }
-  
-  /* Input Group Styles */
-  #forecast-widget .input-group {
+}
+
+/* Input Group Styles */
+#forecast-widget .input-group {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
-  }
-  
-  /* Responsive Design for Phones */
-  
-  /* For screens smaller than 768px */
-  @media screen and (max-width: 768px) {
+}
+
+/* Responsive Design for Phones */
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
     #forecast-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
     }
-  
+
+    #forecast-table {
+        display: block;
+        overflow-x: auto; /* Allow horizontal scroll on small screens */
+        white-space: nowrap; /* Prevent the table from breaking into multiple lines */
+    }
+
     #forecast-table th, #forecast-table td {
-      padding: 10px;
-      font-size: 0.9rem;
+        padding: 10px;
+        font-size: 0.9rem;
+        white-space: nowrap; /* Prevent content from wrapping */
     }
-  
+
     .pagination .btn {
-      padding: 6px 12px;
-      font-size: 0.8rem;
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
-  
+
     .forecast-icon {
-      width: 40px;
-      height: 40px;
+        width: 40px;
+        height: 40px;
     }
-  
+
     #forecast-widget {
-      padding: 20px;
-      margin-top: 70px; /* Move container further down on medium devices */
+        padding: 20px;
+        margin-top: 70px; /* Move container further down on medium devices */
     }
-  }
-  
-  /* For screens smaller than 480px */
-  @media screen and (max-width: 480px) {
+}
+
+/* For screens smaller than 480px */
+@media screen and (max-width: 480px) {
     #forecast-section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
-  
+
+    #forecast-table {
+        display: block;
+        overflow-x: auto; /* Allow horizontal scroll */
+        white-space: nowrap; /* Prevent wrapping */
+        font-size: 0.8rem;
+    }
+
     #forecast-table th, #forecast-table td {
-      padding: 8px;
-      font-size: 0.8rem;
+        padding: 8px;
+        font-size: 0.8rem;
+        white-space: nowrap; /* Prevent content from wrapping */
     }
-  
+
     .pagination .btn {
-      padding: 5px 10px;
-      font-size: 0.7rem;
+        padding: 5px 10px;
+        font-size: 0.7rem;
     }
-  
+
     .forecast-icon {
-      width: 35px;
-      height: 35px;
+        width: 35px;
+        height: 35px;
     }
-  
+
     #forecast-widget {
-      padding: 15px;
-      margin-top: 165px; /* Move container even further down on small devices */
+        padding: 15px;
+        margin-top: 165px; /* Move container even further down on small devices */
     }
-  }
-  
+}
