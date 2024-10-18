@@ -16,7 +16,7 @@ body {
     bottom: 90px;
     right: 30px;
     width: 400px;
-    height: 550px;
+    height: 300px;
     border: none;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -46,6 +46,7 @@ body {
 }
 
 #chat-messages {
+    max-height: 300px;
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
@@ -143,8 +144,9 @@ body {
     50% { opacity: 1; }
 }
 
+/* Chat Input Container and Submit Button - Updated */
 #chat-input-container {
-    padding: 15px;
+    padding: 10px; /* Adjusted padding */
     background-color: #333;
     border-top: 1px solid #444;
 }
@@ -153,17 +155,17 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 10px;
+    gap: 8px; /* Reduced gap */
 }
 
 #chat-input {
     flex-grow: 1;
-    padding: 12px;
+    padding: 10px; /* Reduced padding */
     border: 1px solid #555;
-    border-radius: 12px;
+    border-radius: 8px; /* Reduced border-radius */
     outline: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     background-color: #2a2a2a;
     color: #f0f0f0;
     transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -175,12 +177,11 @@ body {
 }
 
 #chat-submit {
-    width: 65px;
-    height: 45px;
-    padding: 10px;
+    width: 60px; /* Smaller width */
+    height: 40px; /* Smaller height */
     background-color: #007bff;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px; /* Reduced border-radius */
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -195,6 +196,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* Button to open chatbot */
 #open-chat {
     position: fixed;
     bottom: 30px;
@@ -218,65 +220,102 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
     #chatbot-container {
-        width: 250px; /* Smaller width for small screens */
-        height: 400px; /* Smaller height for small screens */
+        width: 220px;
+        height: 350px;
         bottom: 0;
         right: 0;
-        border-radius: 10px; /* Smaller border-radius for small screens */
-        box-shadow: none;
+        border-radius: 8px;
     }
 
     #chat-input-container {
-        padding: 8px; /* Reduced padding for small screens */
+        padding: 4px; /* Smaller padding */
     }
 
     #chat-input {
-        font-size: 11px; /* Smaller font size for input on small screens */
+        font-size: 9px; /* Smaller font size */
+        padding: 6px; /* Smaller padding */
     }
 
     #chat-submit {
-        width: 55px; /* Smaller width for submit button */
-        height: 35px; /* Smaller height for submit button */
-        font-size: 12px; /* Smaller font size for submit button */
+        width: 45px; /* Smaller width */
+        height: 30px; /* Smaller height */
+        font-size: 9px; /* Smaller font size */
     }
 
     #open-chat {
-        bottom: 100px; /* Raised button higher */
-        right: 20px;
-        padding: 8px 18px; /* Smaller button size */
-        font-size: 12px; /* Smaller font size for button */
+        bottom: 90px;
+        right: 15px;
+        padding: 6px 16px;
+        font-size: 11px;
     }
 }
 
+/* Medium Phones (max-width: 768px) */
 @media (max-width: 768px) {
     #chatbot-container {
-        width: 280px; /* Smaller width for medium screens */
-        height: 420px; /* Smaller height for medium screens */
+        width: 280px;
+        height: 300px;
         bottom: 0;
         right: 0;
-        border-radius: 12px; /* Adjusted border-radius for medium screens */
+        border-radius: 12px;
     }
 
     #chat-input-container {
-        padding: 10px; /* Adjusted padding */
+        padding: 6px; /* Adjusted padding */
     }
 
     #chat-input {
-        font-size: 12px; /* Smaller font size */
+        font-size: 10px; /* Adjusted font size */
+        padding: 7px; /* Adjusted padding */
     }
 
     #chat-submit {
-        width: 60px;
-        height: 40px;
-        font-size: 13px;
+        width: 50px; /* Adjusted width */
+        height: 35px; /* Adjusted height */
+        font-size: 10px; /* Adjusted font size */
     }
 
     #open-chat {
-        bottom: 80px; /* Raised button higher */
+        bottom: 80px;
         right: 25px;
-        padding: 10px 22px; /* Adjusted size for medium screens */
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+}
+
+/* Large Phones (max-width: 1024px) */
+@media (max-width: 1024px) {
+    #chatbot-container {
+        width: 320px;
+        height: 300px;
+        bottom: 0;
+        right: 0;
+        border-radius: 15px;
+    }
+
+    #chat-input-container {
+        padding: 8px; /* Adjusted padding */
+    }
+
+    #chat-input {
+        font-size: 11px; /* Adjusted font size */
+        padding: 8px; /* Adjusted padding */
+    }
+
+    #chat-submit {
+        width: 55px; /* Adjusted width */
+        height: 38px; /* Adjusted height */
+        font-size: 11px; /* Adjusted font size */
+    }
+
+    #open-chat {
+        bottom: 70px;
+        right: 30px;
+        padding: 10px 20px;
         font-size: 14px;
     }
 }
