@@ -1,34 +1,36 @@
 /* Side Menu */
 .side-menu {
     width: 250px;
-    background: linear-gradient(135deg, #1c1c1c, #2a2a2a); /* Dark gradient for a modern look */
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     padding: 30px;
-    box-shadow: 3px 0 20px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+    box-shadow: 3px 0 20px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
-    position: fixed; /* Fixed for consistent behavior */
+    position: fixed;
     top: 0;
     bottom: 0;
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Ensure scroll when content overflows */
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999; /* Added to ensure it appears above everything */
 }
+
 
 .side-menu:hover {
-    box-shadow: 6px 0 25px rgba(0, 0, 0, 1); /* Stronger shadow on hover */
-    transform: scale(1.02); /* Slightly enlarges on hover */
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 1);
+    transform: scale(1.02);
 }
 
+/* Logo */
 .side-menu .logo {
-    margin-left: 30px;
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 30px;
     text-align: center;
     color: #fff;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Strong text shadow */
-    animation: glow 2s infinite alternate; /* Glowing animation */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
@@ -36,16 +38,21 @@
         text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
     }
     100% {
-        text-shadow: 3px 3px 20px rgba(30, 144, 255, 1); /* Bright blue glow */
+        text-shadow: 3px 3px 20px rgba(30, 144, 255, 1);
     }
 }
 
+/* Menu List */
 .side-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Center items in the menu */
 }
 
+/* Menu Items */
 .side-menu ul li {
     margin: 20px 0;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -53,8 +60,8 @@
 }
 
 .side-menu ul li:hover {
-    transform: translateX(5px); /* Moves slightly to the right on hover */
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    transform: translateX(5px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .side-menu ul li a {
@@ -75,7 +82,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 144, 255, 0.3); /* Blue highlight */
+    background: rgba(30, 144, 255, 0.3);
     z-index: -1;
     transition: all 0.5s ease;
     opacity: 0;
@@ -86,38 +93,37 @@
 .side-menu ul li a:hover:after,
 .side-menu ul li a.active:after {
     opacity: 1;
-    transform: scaleX(1); /* Expands highlight from left to right */
+    transform: scaleX(1);
 }
 
 .side-menu ul li a:hover,
 .side-menu ul li a.active {
-    color: #1e90ff; /* Bright blue for hover/active state */
-    background: linear-gradient(90deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.4)); /* Highlighted gradient */
-    padding-left: 30px; /* Padding effect on hover */
-    font-weight: 700; /* Bold text */
-    text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Glowing text */
+    color: #1e90ff;
+    background: linear-gradient(90deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.4));
+    padding-left: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
 }
 
 .side-menu ul li:hover {
-    background-color: rgba(30, 144, 255, 0.1); /* Subtle background highlight */
-    transform: translateX(10px); /* Shifts the item right on hover */
+    background-color: rgba(30, 144, 255, 0.1);
+    transform: translateX(10px);
 }
 
-/* Additional Styling */
 .side-menu ul li::before {
     content: '';
     position: absolute;
     left: 0;
     width: 3px;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(30, 144, 255, 1)); /* Animated line on the left */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(30, 144, 255, 1));
     transition: transform 0.4s ease;
-    transform: scaleY(0); /* Initially hidden */
+    transform: scaleY(0);
     transform-origin: top;
 }
 
 .side-menu ul li:hover::before {
-    transform: scaleY(1); /* Grows the line on hover */
+    transform: scaleY(1);
 }
 
 /* Sidebar Weather Icon Background */
@@ -130,72 +136,92 @@
     position: absolute;
     top: 50px;
     left: 15%;
-    width: 50px; /* Reduced the size */
+    width: 50px;
     height: 50px;
-    background-image: url('cloudy.png'); /* Updated to use "cloudy.png" */
+    background-image: url('cloudy.png');
     background-size: cover;
-    background-position: center; /* Faded background effect */
+    background-position: center;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure it stays behind the sidebar content */
+    z-index: -1;
 }
 
 /* Media Queries */
+
+/* For screens smaller than 768px */
 @media screen and (max-width: 768px) {
     .side-menu {
         width: 100%;
-        height: 300px; /* Fixed height for smaller screens */
-        padding: 10px;
-        box-shadow: none; /* Remove shadow on smaller screens */
+        height: auto; /* Adjust height */
+        padding: 10px 20px; /* Reduce padding */
+        box-shadow: none;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add bottom border */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: unset;
         display: flex;
-        justify-content: space-around; /* Space items horizontally */
-        position: relative;
-        overflow-y: auto; /* Allow scrolling if content exceeds max height */
+        flex-direction: column; /* Stack items in a column */
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
     }
 
     .side-menu ul {
-        display: flex;
-        flex-direction: row; /* Change the menu to horizontal layout */
-        justify-content: space-between;
-        padding: 0;
-        width: 100%;
+        flex-direction: column; /* Ensure column layout */
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Make links take full width */
     }
 
     .side-menu ul li {
-        margin: 0 10px; /* Adjust margin for horizontal layout */
-        transform: none; /* Remove hover translation */
-    }
-
-    .side-menu ul li:hover {
-        transform: none; /* No hover transform */
+        margin: 10px 0;
     }
 
     .side-menu ul li a {
         padding: 10px 15px;
-        font-size: 1rem; /* Adjust font size for small screens */
-        text-align: center; /* Center the text */
+        font-size: 1rem;
+        width: 100%; /* Full width links */
+        text-align: center; /* Center-align text */
     }
 
     .side-menu .logo {
-        font-size: 1.5rem; /* Adjust logo size */
-        margin-left: 0;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        text-align: center; /* Center logo */
     }
 }
 
+/* For very small screens (less than 480px) */
 @media screen and (max-width: 480px) {
     .side-menu {
-        padding: 5px;
-        height: 200px; /* Reduced height for very small screens */
-        overflow-y: auto;
+        height: 150px; /* Further adjust height */
+        padding: 5px 10px; /* Compact padding */
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .side-menu ul {
+        flex-direction: column; /* Stack links in a column */
+        width: 100%;
+        align-items: center; /* Center items */
+    }
+
+    .side-menu ul li {
+        margin: 0;
     }
 
     .side-menu ul li a {
         font-size: 0.9rem;
-        padding: 8px 10px;
+        padding: 5px 8px;
+        width: 100%; /* Full width for each link */
+        text-align: center; /* Align text to the left */
     }
 
     .side-menu .logo {
+        margin-top: 15px;
         font-size: 1.2rem;
+        margin-bottom: 10px; /* Add space below the logo */
+        text-align: center; /* Center logo */
     }
 }

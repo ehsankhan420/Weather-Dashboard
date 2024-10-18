@@ -58,21 +58,22 @@ button#get-location {
 /* Weather Details */
 .weather-details {
   text-align: left;
-  padding: 20px;
+  padding: 15px; /* Reduced padding to bring elements closer */
   background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
+  margin-top: 20px; /* Added margin-top to move the section down */
 }
 
 .weather-details h2 {
-  margin-left: 30px;
-  font-size: 2.2rem;
+  margin-left: 25px;
+  font-size: 2rem;
   font-weight: 600;
   color: #333;
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 25px;
+  margin-bottom: 20px; /* Reduced margin between title and details */
   display: flex;
   align-items: center;
 }
@@ -84,9 +85,9 @@ button#get-location {
 }
 
 .weather-details p {
-  margin-bottom: 18px;
-  margin-left: 25px;
-  font-size: 1.6rem;
+  margin-bottom: 12px; /* Reduced margin between paragraphs */
+  margin-left: 20px; /* Brought text closer to the left */
+  font-size: 1.5rem;
   color: #444;
   display: flex;
   align-items: center;
@@ -94,28 +95,29 @@ button#get-location {
 
 .weather-details p i {
   margin-right: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #007bff;
 }
 
 .weather-details p strong {
   color: #007bff;
   font-weight: 700;
-  margin-right: 15px;
+  margin-right: 10px; /* Reduced gap between strong and content */
 }
 
 .weather-details p span {
-  margin-left: 10px;
+  margin-left: 5px; /* Reduced gap between label and value */
 }
 
 .weather-details img.weather-icon {
   width: 120px;
   height: 120px;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced gap below the icon */
   display: block;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
 }
 
+/* Adjusted for better responsiveness */
 .weather-details p#weather-description {
   font-style: italic;
   font-size: 1.4rem;
@@ -133,7 +135,7 @@ button#get-location {
   width: 150px; /* Reduced size */
   height: 150px;
   display: block;
-  margin: 0 395px 20px; /* Center and add spacing below */
+  margin: 0 395px 15px; /* Reduced spacing below */
   position: relative;
   z-index: 1; /* Ensures it stays above other content */
 }
@@ -142,16 +144,20 @@ button#get-location {
   position: relative;
 }
 
+/* Weather description responsiveness */
 #weather-description {
   position: absolute;
-  top: 50%; /* Vertically center the description */
-  left: 50%; /* Horizontally center */
+  top: 40%; /* Vertically center the description */
+  left: 44%; /* Horizontally center */
   transform: translate(-50%, -50%);
   z-index: 2; /* Ensure the description is above the icon */
   font-style: italic;
   font-size: 1.5rem;
   color: rgb(0, 0, 0); /* Ensures readability over the icon */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Improves readability */
+  text-align: center;
+  max-width: 80%;
+  white-space: normal; /* Break lines as needed */
 }
 
 /* Weather Widget */
@@ -165,7 +171,7 @@ button#get-location {
 /* Input Group Styles */
 #weather-widget .input-group {
   display: flex;
-  gap: 15px;
+  gap: 10px; /* Reduced gap between input elements */
   margin-bottom: 20px;
 }
 
@@ -189,13 +195,14 @@ button#get-location {
   }
 
   #weather-icon {
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     width: 120px;
     height: 120px;
   }
 
   #weather-description {
     font-size: 1.3rem;
+    top: 35%; /* Move description slightly up */
   }
 
   #weather-widget {
@@ -233,6 +240,7 @@ button#get-location {
 
   #weather-description {
     font-size: 1.2rem;
+    top: 33%; /* Move description slightly up */
   }
 
   #weather-widget {
@@ -251,6 +259,10 @@ button#get-location {
     width: 100px;
     font-size: 0.8rem;
     padding: 6px 12px;
+    margin-top: 20px; /* Increase margin to move the button down */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center buttons */
   }
 
   .weather-details h2 {
@@ -270,14 +282,113 @@ button#get-location {
 
   #weather-description {
     font-size: 1rem;
+    top: 30%; /* Move description slightly up */
+    white-space: normal;
+    max-width: 90%; /* Ensure it doesn't overflow */
+    text-align: center;
   }
 
   #weather-widget {
     padding: 10px;
+    margin-top: 150px; /* Move the entire widget down */
+  }
+
+  #weather-widget .input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  button#get-weather,
+  button#get-location {
+    width: 100px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    margin-top: 20px; /* Increase margin to move the button down */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center buttons */
+  }
+
+  .weather-details h2 {
+    font-size: 1.6rem;
+    margin-left: 10px;
+  }
+
+  .weather-details p {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  #weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  #weather-description {
+    font-size: 1rem;
+    top: 30%; /* Move description slightly up */
+    white-space: normal;
+    max-width: 90%; /* Ensure it doesn't overflow */
+    text-align: center;
+  }
+
+  #weather-widget {
+    padding: 10px;
+    margin-top: 150px; /* Move the entire widget down */
   }
 
   #weather-widget .input-group {
     flex-direction: column;
     gap: 5px;
+  }
+}
+
+/* Adjustments for screens smaller than 320px */
+@media screen and (max-width: 320px) {
+  button#get-weather,
+  button#get-location {
+    width: 90px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    margin-top: 30px; /* Further increase margin */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather-details h2 {
+    font-size: 1.4rem;
+    margin-left: 8px;
+  }
+
+  .weather-details p {
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+
+  #weather-icon {
+    width: 70px;
+    height: 70px;
+    margin-top: -10px; /* Move icon up */
+  }
+
+  #weather-description {
+    font-size: 0.8rem;
+    top: 28%; /* Move description slightly up */
+    white-space: normal;
+    max-width: 95%; /* Ensure it doesn't overflow */
+    text-align: center;
+  }
+
+  #weather-widget {
+    padding: 8px;
+    margin-top: 30px; /* Move widget further down */
+  }
+
+  #weather-widget .input-group {
+    flex-direction: column;
+    gap: 4px;
   }
 }
