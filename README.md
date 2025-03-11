@@ -92,3 +92,4 @@ Run the app and explore all the features!
 - Improve the chatbot conversation flow for more natural interaction.
 - Add additional weather filters such as humidity and wind speed.
 Updated project documentation
+Updated project documentation
